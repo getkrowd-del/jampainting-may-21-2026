@@ -1,0 +1,236 @@
+:root {
+            --jam-blue: #0d6efd;
+            --jam-yellow: #ffc107;
+            --jam-red: #dc3545;
+            --jam-purple: #6f42c1;
+            --jam-green: #198754;
+            --jam-orange: #fd7e14;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, .brand-font {
+            font-family: 'Carter One', cursive;
+        }
+
+        /* Brand Colors applied to text */
+        .color-blue { color: var(--jam-blue); }
+        .color-yellow { color: var(--jam-yellow); }
+        .color-red { color: var(--jam-red); }
+        .color-purple { color: var(--jam-purple); }
+        .color-green { color: var(--jam-green); }
+        .color-orange { color: var(--jam-orange); }
+
+        .bg-brand-red { background-color: var(--jam-red); color: white; }
+        .bg-brand-red:hover { background-color: #b02a37; color: white; }
+
+        /* Navbar & Logo Styling */
+        .navbar {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        
+        /* The container keeps the navbar's height so the absolute logo doesn't collapse it */
+        .navbar-brand-container {
+            width: 180px;
+            height: 60px; 
+            display: inline-block;
+        }
+
+        /* Overhanging Logo */
+        .overhang-logo {
+            position: absolute;
+            top: 5px; /* Distance from top of navbar */
+            left: 15px; /* Adjust based on container alignment */
+            width: 200px;
+            z-index: 1050; /* Keeps it above the hero section */
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            border: 4px solid white;
+            background-color: white; /* Ensure transparency looks clean */
+            transition: transform 0.3s ease;
+        }
+
+        .overhang-logo:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 991px) {
+            .overhang-logo {
+                width: 140px;
+                left: 10px;
+            }
+            .navbar-brand-container {
+                width: 140px;
+            }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)), url('painting-walls-pink.jpg') center/cover fixed no-repeat;
+            color: white;
+            padding: 140px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phone-btn-massive {
+            font-size: 3rem;
+            font-family: 'Carter One', cursive;
+            border-radius: 20px;
+            padding: 15px 50px;
+            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.5);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border: 4px solid white;
+            letter-spacing: 2px;
+        }
+
+        .phone-btn-massive:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(220, 53, 69, 0.7);
+            color: white;
+        }
+
+        /* Paint Splatter Accents */
+        .splatter {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.6;
+            filter: blur(40px);
+            border-radius: 50%;
+            animation: pulse 6s infinite alternate;
+        }
+
+        .splatter-1 { top: -10%; right: -5%; width: 300px; height: 300px; background: var(--jam-purple); }
+        .splatter-2 { bottom: -10%; left: -5%; width: 250px; height: 250px; background: var(--jam-green); }
+        .splatter-3 { top: 40%; left: 10%; width: 150px; height: 150px; background: var(--jam-yellow); animation-delay: 2s; }
+        .splatter-4 { bottom: 20%; right: 10%; width: 200px; height: 200px; background: var(--jam-blue); animation-delay: 1s; }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.4; }
+            100% { transform: scale(1.2); opacity: 0.7; }
+        }
+
+        /* Services Cards */
+        .service-card {
+            border: none;
+            border-radius: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: visible;
+            background: white;
+            z-index: 1;
+            padding: 12px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-card img {
+            border-radius: 10px;
+            height: 160px;
+            object-fit: cover;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .card-border-blue { border: 3px solid var(--jam-blue); }
+        .card-border-red { border: 3px solid var(--jam-red); }
+        .card-border-yellow { border: 3px solid var(--jam-yellow); }
+
+        /* Splatter & Drip Overlays */
+        .splash-top-left {
+            position: absolute;
+            top: -40px;
+            left: -35px;
+            width: 85px;
+            height: 85px;
+            z-index: 5;
+        }
+        
+        .splash-top-left span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: 'Carter One', cursive;
+            font-size: 1.8rem;
+            z-index: 6;
+        }
+
+        .splash-right {
+            position: absolute;
+            bottom: 45px;
+            right: -30px;
+            width: 65px;
+            height: 65px;
+            z-index: 5;
+        }
+
+        /* Gallery/Portfolio Section */
+        .gallery-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .carousel-item img {
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .status-badge {
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Trust Section */
+        .trust-badge {
+            background: white;
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #111827;
+            color: #9ca3af;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
